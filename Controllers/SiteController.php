@@ -2,24 +2,25 @@
 namespace app\Controllers;
 
 use app\Core\Application;
+use app\Core\Controller;
 
-class SiteController
+class SiteController extends Controller
 {
-    public static function home()
+    public function home()
     {
         $params = [
             'name' => 'Moaaz',
             'age' => '27'
         ];
-        return Application::$app->router->renderView('home', $params);
+        return $this->render('home', $params);
     }
 
-    public static function contact()
+    public  function contact()
     {
-        return Application::$app->router->renderView('contact');
+        return $this->render('contact');
     }
 
-    public static function handleContact()
+    public function handleContact()
     {
         return 'Handling';
     }
