@@ -1,0 +1,16 @@
+{
+    "name": "moaaz/mvc",
+    "autoload": {
+        "psr-4": {
+            "Moaaz\\Mvc\\": "src/",
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "moaaz97",
+            "email": "moaaz.briek97@gmail.com"
+        }
+    ],
+    "require": {}
+}

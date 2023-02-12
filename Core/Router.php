@@ -6,7 +6,6 @@ class Router
     public Request $request;
     protected array $routes = [];
 
-
     public function __construct(Request $request)
     {
         $this->request = $request;
@@ -20,8 +19,13 @@ class Router
     public function resolve()
     {
         $path = $this->request->getPath();
-        var_dump($path);
+        $method = $this->request->getMethod();
+        $callback = $this->routes[$method][$path] ?? false;
+        if($callback === false){
+            echo 'Not Found';
+            Exit;
+        }
+        echo call_user_func($callback);
+
     }
-
-
 }
