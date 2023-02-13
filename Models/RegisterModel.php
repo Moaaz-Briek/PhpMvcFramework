@@ -12,11 +12,6 @@ class RegisterModel extends Model
     public string $password;
     public string $confirmPassword;
 
-    public function validat()
-    {
-
-    }
-
     public function rules(): array
     {
         // TODO: Implement rules() method.
