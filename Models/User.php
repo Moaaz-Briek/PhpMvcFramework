@@ -30,6 +30,11 @@ class User extends DbModel
         return 'user';
     }
 
+    public function attributes(): array
+    {
+        return ['firstname', 'lastname', 'email', 'password'];
+    }
+
     public function register()
     {
 
