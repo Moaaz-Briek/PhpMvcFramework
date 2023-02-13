@@ -12,5 +12,7 @@
             "email": "moaaz.briek97@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
 }
