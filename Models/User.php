@@ -7,13 +7,21 @@ use app\Core\DbModel;
 class User extends DbModel
 {
     const STATUS_INACTIVE = 0;
-    const STATUS_ACTIVE = 1;
-    const STATUS_DELETED = 2;
-    public string $firstname = '';
-    public string $lastname = '';
-    public string $email = '';
+
     public int $status = self::STATUS_INACTIVE;
+
+    const STATUS_ACTIVE = 1;
+
+    const STATUS_DELETED = 2;
+
+    public string $firstname = '';
+
+    public string $lastname = '';
+
+    public string $email = '';
+
     public string $password = '';
+
     public string $confirmPassword = '';
 
     public function rules(): array
@@ -55,5 +63,10 @@ class User extends DbModel
         $this->status = self::STATUS_INACTIVE;
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         return parent::save();
+    }
+
+    public function primaryKey(): string
+    {
+        return 'id';
     }
 }
