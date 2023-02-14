@@ -35,7 +35,7 @@ class User extends DbModel
         return ['firstname', 'lastname', 'email', 'password'];
     }
 
-    public function register()
+    public function save()
     {
         return $this->save();
     }
