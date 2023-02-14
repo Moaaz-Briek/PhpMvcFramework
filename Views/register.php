@@ -1,3 +1,6 @@
+<?php
+/* @var $model \app\Models\User*/
+?>
 <?php $form = \app\Core\form\Form::begin('', "post") ?>
 <?php echo $form->field($model, 'firstname'); ?>
 <?php echo $form->field($model, 'lastname'); ?>
