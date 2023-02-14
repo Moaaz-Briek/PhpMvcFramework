@@ -8,6 +8,8 @@ abstract class DbModel extends Model
 
     public abstract function attributes(): array;
 
+    public abstract function primaryKey(): string;
+
     public function save()
     {
         $tableName = $this->tableName();
