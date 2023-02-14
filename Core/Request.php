@@ -44,10 +44,4 @@ class Request
         }
         return $body;
     }
-
-    public function redirect(string $url)
-    {
-        header('Location: '.$url);
-    }
-
 }
