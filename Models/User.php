@@ -27,7 +27,7 @@ class User extends DbModel
     public function tableName(): string
     {
         // TODO: Implement tableName() method.
-        return 'user';
+        return 'users';
     }
 
     public function attributes(): array
@@ -37,6 +37,6 @@ class User extends DbModel
 
     public function register()
     {
-
+        return $this->save();
     }
 }
