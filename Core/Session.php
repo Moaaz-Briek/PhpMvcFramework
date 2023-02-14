@@ -8,15 +8,20 @@ class Session
     public function __construct()
     {
         session_start();
-        $flashMessages = $_SESSION[self::FLASH_KEY];
-        foreach ($flashMessages as $key => $message) {
+        $flashMessages = $_SESSION[self::FLASH_KEY] ?? [];
+        foreach ($flashMessages as $key => &$message) {
             //Mark to be removed
+            $message['remove'] = true;
         }
+        $_SESSION[self::FLASH_KEY] = $flashMessages;
     }
 
     public function setFlash($key, $message)
     {
-        $_SESSION[self::FLASH_KEY][$key] = $message;
+        $_SESSION[self::FLASH_KEY][$key] = [
+            'remove' => false,
+            'value' => $message,
+        ];
     }
 
     public function getFlash($key)
