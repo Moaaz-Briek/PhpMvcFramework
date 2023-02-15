@@ -49,7 +49,7 @@ class Application
         $this->user = $user;
         $primaryKey = $user->primaryKey();
         $primaryValue = $user->{$primaryKey};
-        $this->session->set('user', $primaryValue);
+        $this->session->set('user', $primaryValue); //['user' => 'id'] = ['user' => 2]
         return true;
     }
 
