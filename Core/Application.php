@@ -2,9 +2,12 @@
 
 namespace app\Core;
 
+use app\Models\User;
+
 class Application
 {
     public static string $ROOT_DIR;
+    public string $userClass;
     public Router $router;
     public Request $request;
     public Session $session;
@@ -12,9 +15,11 @@ class Application
     public static Application $app;
     public Controller $controller;
     public Database $db;
+    public ?DbModel $user;
 
     public function __construct($rootPath, array $config)
     {
+        $this->userClass = $config['userClass'];
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
         $this->request = new Request();
@@ -22,6 +27,15 @@ class Application
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
         $this->db = new Database($config['db']);
+
+        $primaryValue = $this->session->get('user');
+        if ($primaryValue) {
+            $user = (new $this->userClass());
+            $primaryKey = $user->primaryKey();
+            $this->user = $user->findOne([$primaryKey => $primaryValue]);
+        } else {
+            $this->user = null;
+        }
     }
 
     public function run()
