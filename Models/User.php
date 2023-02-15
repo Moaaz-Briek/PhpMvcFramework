@@ -3,8 +3,9 @@
 namespace app\Models;
 
 use app\Core\DbModel;
+use app\Core\UserModel;
 
-class User extends DbModel
+class User extends UserModel
 {
     const STATUS_INACTIVE = 0;
 
@@ -68,5 +69,10 @@ class User extends DbModel
     public function primaryKey(): string
     {
         return 'id';
+    }
+
+    public function getName(): string
+    {
+        return sprintf("%s %s", $this->firstname, $this->lastname);
     }
 }
