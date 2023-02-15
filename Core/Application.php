@@ -7,12 +7,13 @@ use app\Models\User;
 class Application
 {
     public static string $ROOT_DIR;
+
+    public static Application $app;
     public string $userClass;
     public Router $router;
     public Request $request;
     public Session $session;
     public Response $response;
-    public static Application $app;
     public Controller $controller;
     public Database $db;
     public ?DbModel $user;
@@ -58,5 +59,8 @@ class Application
         $this->session->remove('user');
     }
 
-
+    public static function isGuest()
+    {
+        return !self::$app->user;
+    }
 }
