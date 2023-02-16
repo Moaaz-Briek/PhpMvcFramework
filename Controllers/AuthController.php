@@ -23,11 +23,11 @@ class AuthController extends Controller
         if ($request->isPost()) {
             $loginForm->loadData($request->getBody());
             if($loginForm->validate() && $loginForm->login()) {
+                $this->setLayout('auth');
                 $response->redirect('/');
                 return;
             }
         }
-        $this->setLayout('auth');
         return $this->render('login', [
             'model' => $loginForm
         ]);
@@ -36,11 +36,11 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $user = new User();
-        $this->setLayout('auth');
         if($request->isPost()) {
             $user->loadData($request->getBody());
             if ($user->validate() && $user->save()) {
                 Application::$app->session->setFlash('success', 'Thanks for registering!');
+                $this->setLayout('auth');
                 Application::$app->response->redirect('/');
             }
             return $this->render('register', [
