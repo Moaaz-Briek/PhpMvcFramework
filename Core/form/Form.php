@@ -16,10 +16,4 @@ class Form
     {
         echo '</form>';
     }
-
-    public function field(Model $model, $attribute)
-    {
-       return new Field($model, $attribute);
-    }
-
 }
