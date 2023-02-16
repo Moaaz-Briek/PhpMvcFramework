@@ -1,11 +1,11 @@
 <?php
 namespace app\Controllers;
 
-use app\Core\Application;
-use app\Core\Controller;
-use app\Core\middlewares\SiteMiddleware;
-use app\Core\Request;
-use app\Core\Response;
+use moaazbriek\phpmvc\Application;
+use moaazbriek\phpmvc\Controller;
+use moaazbriek\phpmvc\middlewares\SiteMiddleware;
+use moaazbriek\phpmvc\Request;
+use moaazbriek\phpmvc\Response;
 use app\Models\ContactForm;
 
 class SiteController extends Controller
