@@ -34,7 +34,7 @@ class Router
             throw new NotFoundException();
         }
         if (is_string($callback)) {
-            return Application::$app->view->renderView($callback);
+            return Application::$app->view->view($callback);
         }
         if (is_array($callback)) {
             Application::$app->controller = new $callback[0]();
