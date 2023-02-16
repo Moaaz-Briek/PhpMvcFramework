@@ -9,6 +9,7 @@ class Application
     public static string $ROOT_DIR;
 
     public static Application $app;
+    public string $layout = 'main';
     public string $userClass;
     public Router $router;
     public Request $request;
