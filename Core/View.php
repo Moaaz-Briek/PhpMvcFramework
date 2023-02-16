@@ -6,20 +6,20 @@ class View
 {
     public string $title = '';
 
-    public function renderView($view, $params = [])
+    public function view($view, $params = [])
     {
-        $layoutContent = $this->layoutContent();
-        $viewContent = $this->renderOnlyView($view, $params);
-        return str_replace('{{content}}', $viewContent, $layoutContent);
+        $view = $this->renderView($view, $params);
+        $layout = $this->renderLayout();
+        return str_replace('{{content}}', $view, $layout);
     }
 
-    public function renderContent($Contentview)
+    public function renderContent($view)
     {
-        $layoutContent = $this->layoutContent();
-        return str_replace('{{content}}', $Contentview, $layoutContent);
+        $layout = $this->renderLayout();
+        return str_replace('{{content}}', $view, $layout);
     }
 
-    protected function layoutContent()
+    protected function renderLayout()
     {
         $layout = Application::$app->layout;
         ob_start();
@@ -27,7 +27,7 @@ class View
         return ob_get_clean();
     }
 
-    protected function renderOnlyView($view, $params=null)
+    protected function renderView($view, $params=null)
     {
         if($params != null){
             foreach ($params as $key => $value){
