@@ -44,7 +44,8 @@ class Application
         try {
             echo $this->router->resolve();
         } catch (\Exception $e) {
-            echo $this->router->renderView('unAuthorized', ['exception' => $e]);
+            $this->response->setStatusCode($e->getCode());
+            echo $this->router->renderView('errors', ['exception' => $e]);
         }
     }
 
