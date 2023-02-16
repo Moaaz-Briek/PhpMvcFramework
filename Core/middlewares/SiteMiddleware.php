@@ -15,7 +15,7 @@ class SiteMiddleware extends BaseMiddleware
 
     public function execute()
     {
-        if (empty($this->actions) /*Means that the middleware is work for every action*/ || in_array(Application::$app->controller->action, $this->actions)) {
+        if (in_array(Application::$app->controller->action, $this->actions)) {
             throw new ForbiddenException();
         }
     }
