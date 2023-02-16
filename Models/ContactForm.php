@@ -13,7 +13,7 @@ class ContactForm extends Model
     public function rules(): array
     {
         return [
-          'email' => [self::RULE_REQUIRED],
+          'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
           'subject' => [self::RULE_REQUIRED],
           'body' => [self::RULE_REQUIRED],
         ];
@@ -22,9 +22,14 @@ class ContactForm extends Model
     public function labels(): array
     {
         return [
-            'email' => 'Enter Your Email',
-            'subject' => 'Enter Your Subject',
-            'Body' => 'Enter Subject Body',
+            'email' => 'Email',
+            'subject' => 'Message Subject',
+            'body' => 'Subject Body',
          ];
+    }
+
+    public function send()
+    {
+        return true;
     }
 }
