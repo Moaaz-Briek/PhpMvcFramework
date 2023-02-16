@@ -16,7 +16,7 @@ class Controller
 
     public function render($view, $params=null)
     {
-        return Application::$app->view->renderView($view, $params);
+        return Application::$app->view->view($view, $params);
     }
 
     public function setLayout($layout)
