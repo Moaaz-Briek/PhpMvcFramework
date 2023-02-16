@@ -1,5 +1,8 @@
 <?php
-/* @var $model \app\Models\User*/
+/* @var $model \app\Models\User
+ * @var $this \app\Core\View
+ */
+$this->title = 'Register';
 ?>
 <?php $form = \app\Core\form\Form::begin('', "post") ?>
 <?php echo $form->field($model, 'firstname'); ?>

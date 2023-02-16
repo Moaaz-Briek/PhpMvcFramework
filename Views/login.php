@@ -1,5 +1,8 @@
 <?php
-/* @var $model \app\Models\User*/
+/* @var $model \app\Models\User
+ * @var $this \app\Core\View
+ */
+$this->title = 'Login';
 ?>
 <h3 class="mt-2">Login</h3>
 <?php $form = \app\Core\form\Form::begin('', "post") ?>
