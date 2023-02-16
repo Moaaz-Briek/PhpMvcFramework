@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f90611d3a2ba83c1e6a45bfabfe7df2",
+    "content-hash": "6d47fe2a315610a581c9bb0eaddfdd9b",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -70,19 +70,18 @@
         },
         {
             "name": "moaazbriek/php-mvc-core",
-            "version": "dev-master",
+            "version": "V1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moaaz97/PHP-MVC-Core.git",
-                "reference": "f20c5cd6c5c1ffc8be4a260a2a2e139df51e45d5"
+                "reference": "cdf408053d0ef8d6a6285b81dc1602903ec227c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moaaz97/PHP-MVC-Core/zipball/f20c5cd6c5c1ffc8be4a260a2a2e139df51e45d5",
-                "reference": "f20c5cd6c5c1ffc8be4a260a2a2e139df51e45d5",
+                "url": "https://api.github.com/repos/moaaz97/PHP-MVC-Core/zipball/cdf408053d0ef8d6a6285b81dc1602903ec227c6",
+                "reference": "cdf408053d0ef8d6a6285b81dc1602903ec227c6",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -98,9 +97,9 @@
             ],
             "support": {
                 "issues": "https://github.com/moaaz97/PHP-MVC-Core/issues",
-                "source": "https://github.com/moaaz97/PHP-MVC-Core/tree/V1.0.4"
+                "source": "https://github.com/moaaz97/PHP-MVC-Core/tree/V1.0.5"
             },
-            "time": "2023-02-16T18:54:52+00:00"
+            "time": "2023-02-16T19:36:42+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -513,9 +512,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "moaazbriek/php-mvc-core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

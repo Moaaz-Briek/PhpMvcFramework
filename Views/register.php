@@ -1,10 +1,10 @@
 <?php
 /* @var $model \app\Models\User
- * @var $this \app\core\View
+ * @var $this \moaazbriek\phpmvc\View
  */
 
-use app\core\form\Form;
-use app\core\form\inputField;
+use moaazbriek\phpmvc\form\Form;
+use moaazbriek\phpmvc\form\inputField;
 
 $this->title = 'Register';
 ?>

@@ -8,7 +8,7 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^5.5",
-        "moaazbriek/php-mvc-core": "dev-master"
+        "moaazbriek/php-mvc-core": "^1.0"
     },
     "autoload": {
     "psr-4": {

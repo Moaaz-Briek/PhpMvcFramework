@@ -1,12 +1,12 @@
 <?php
 /**
- * @var $this \app\core\View
+ * @var $this \moaazbriek\phpmvc\View
  * @var $model \app\Models\ContactForm
  */
 
-use app\core\form\Form;
-use app\core\form\inputField;
-use app\core\form\TextareaField;
+use moaazbriek\phpmvc\form\Form;
+use moaazbriek\phpmvc\form\inputField;
+use moaazbriek\phpmvc\form\TextareaField;
 $this->title = 'Contact';
 ?>
 <h5>Contact Us</h5>

@@ -1,8 +1,8 @@
 <?php
 /**
- * @var $this \app\core\View
+ * @var $this \moaazbriek\phpmvc\View
  */
-use \app\core\Application;
+use \moaazbriek\phpmvc\Application;
 ?>
 <!doctype html>
 <html lang="en">

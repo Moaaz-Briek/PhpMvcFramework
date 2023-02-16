@@ -2,7 +2,7 @@
 
 use app\Controllers\AuthController;
 use app\Controllers\SiteController;
-use app\core\Application;
+use moaazbriek\phpmvc\Application;
 
 require_once __DIR__.'/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
