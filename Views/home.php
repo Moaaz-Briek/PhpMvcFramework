@@ -1,7 +1,7 @@
 <?php
 /**
  * @var $params array
- * @var $this \moaazbriek\phpmvc\View
+ * @var $this \app\core\View
  */
     $this->title = 'Home';
 ?>

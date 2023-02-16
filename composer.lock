@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb68737ff658831316a435020f906ed8",
+    "content-hash": "4f90611d3a2ba83c1e6a45bfabfe7df2",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -67,6 +67,40 @@
                 }
             ],
             "time": "2022-07-30T15:56:11+00:00"
+        },
+        {
+            "name": "moaazbriek/php-mvc-core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moaaz97/PHP-MVC-Core.git",
+                "reference": "f20c5cd6c5c1ffc8be4a260a2a2e139df51e45d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moaaz97/PHP-MVC-Core/zipball/f20c5cd6c5c1ffc8be4a260a2a2e139df51e45d5",
+                "reference": "f20c5cd6c5c1ffc8be4a260a2a2e139df51e45d5",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "moaazbriek\\phpmvc\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "moaaz97",
+                    "email": "moaaz.briek97@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/moaaz97/PHP-MVC-Core/issues",
+                "source": "https://github.com/moaaz97/PHP-MVC-Core/tree/V1.0.4"
+            },
+            "time": "2023-02-16T18:54:52+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -479,7 +513,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "moaazbriek/php-mvc-core": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $this \moaazbriek\phpmvc\View
+ * @var $this \app\core\View
  */
 $this->title = 'Profile';
 ?>

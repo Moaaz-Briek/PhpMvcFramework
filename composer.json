@@ -1,11 +1,5 @@
 {
     "name": "moaaz/mvc",
-    "autoload": {
-        "psr-4": {
-            "Moaaz\\Mvc\\": "src/",
-            "app\\": "./"
-        }
-    },
     "authors": [
         {
             "name": "moaaz97",
@@ -13,6 +7,12 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "moaazbriek/php-mvc-core": "dev-master"
+    },
+    "autoload": {
+    "psr-4": {
+        "app\\": "."
     }
+}
 }
