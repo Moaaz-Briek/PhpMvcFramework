@@ -1,11 +1,16 @@
 <?php
 namespace app\Core;
 
+use app\Controllers\AuthController;
+use app\Controllers\SiteController;
+use app\Core\exception\NotFoundException;
+
 class Router
 {
     public Request $request;
     public Response $response;
     protected array $routes = [];
+    public string $layout = 'main';
 
     public function __construct(Request $request, Response $response)
     {
@@ -29,8 +34,7 @@ class Router
         $method = $this->request->method();
         $callback = $this->routes[$method][$path] ?? false;
         if ($callback === false) {
-            $this->response->setStatusCode(404);
-            return $this->renderView('404');
+            throw new NotFoundException();
         }
         if (is_string($callback)) {
             return $this->renderView($callback);
@@ -38,6 +42,7 @@ class Router
         if (is_array($callback)) {
             Application::$app->controller = new $callback[0]();
             Application::$app->controller->action = $callback[1];
+            $this->layout = Application::$app->controller->layout;
             $callback[0] = Application::$app->controller;
 
             foreach (Application::$app->controller->getMiddlewares() as $middleware) {
@@ -62,9 +67,8 @@ class Router
 
     protected function layoutContent()
     {
-        $layout = Application::$app->controller->layout;
         ob_start();
-        include_once Application::$ROOT_DIR."/Views/layouts/$layout.php";
+        include_once Application::$ROOT_DIR."/Views/layouts/$this->layout.php";
         return ob_get_clean();
     }
 
